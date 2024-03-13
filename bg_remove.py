@@ -35,7 +35,7 @@ col1, col2 = st.columns(2)
 my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 
 if my_upload is not None:
-  if my_upload > MAX_FILE_SIZE:
+  if my_upload.size > MAX_FILE_SIZE:
     st.error("File size cannot be greater than 5MB.")
   else:
     fix_image(upload=my_upload)
